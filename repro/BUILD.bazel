@@ -1,0 +1,16 @@
+java_import(
+    name = "junit_params",
+    jars = ["pragmatists-JUnitParams-1.0.5.jar"],
+)
+
+java_test(
+    name = "repro_test",
+    srcs = [
+        "AllTests.java",
+        "GoodTest.java",
+        "BadTest.java",
+        "TestClasspathSuite.java",
+    ],
+    test_class = "com.repro.AllTests",
+    deps = [":junit_params"],
+)
